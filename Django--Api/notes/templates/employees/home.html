@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to MySite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+</head>
+<body class="h-full flex items-center justify-center">
+
+  <!-- Animated Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
+              bg-[length:400%_400%] animate-[gradientMove_15s_ease_infinite]"></div>
+
+  <!-- Welcome Card -->
+  <div class="relative z-10 bg-white bg-opacity-80 backdrop-blur-md rounded-2xl shadow-2xl p-10 w-full max-w-md text-center">
+    <h1 class="text-4xl font-extrabold text-gray-800 mb-4">Welcome to MySite</h1>
+    <p class="text-gray-700 mb-6">Your all-in-one platform for managing tasks, users, and more!</p>
+
+    <div class="flex flex-col gap-4">
+      <a href="{% url 'login' %}" 
+         class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-xl shadow transition duration-300">
+         Login
+      </a>
+      <a href="{% url 'register' %}" 
+         class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded-xl shadow transition duration-300">
+         Register
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
